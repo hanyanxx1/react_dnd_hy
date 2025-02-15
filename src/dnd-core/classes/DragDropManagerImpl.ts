@@ -15,5 +15,8 @@ class DragDropManagerImpl {
   getGlobalMonitor() {
     return this.globalMonitor;
   }
+  getRegistry() {
+    return this.globalMonitor.registry;
+  }
 }
 export default DragDropManagerImpl;

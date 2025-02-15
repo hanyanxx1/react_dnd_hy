@@ -3,11 +3,15 @@
  */
 class SourceConnector {
   backend;
+  handlerId;
   constructor(backend) {
     this.backend = backend;
   }
   connect() {
     console.log("连接React和DOM");
+  }
+  receiveHandlerId(handlerId) {
+    this.handlerId = handlerId;
   }
 }
 
