@@ -3,16 +3,27 @@
  */
 class SourceConnector {
   backend;
-  handlerId;
+  handlerId; //拖动源唯一标识
+  dragSourceRef; //DOM节点
   constructor(backend) {
     this.backend = backend;
   }
+  get dragSource() {
+    return this.dragSourceRef && this.dragSourceRef.current;
+  }
   connect() {
-    console.log("连接React和DOM");
+    if (!this.handlerId || !this.dragSource) {
+      return;
+    }
+    this.backend.connectDragSource(this.handlerId, this.dragSource);
   }
   receiveHandlerId(handlerId) {
     this.handlerId = handlerId;
+    this.connect();
   }
+  receiveDragSource = (dragSourceRef) => {
+    this.dragSourceRef = dragSourceRef;
+  };
 }
 
 export default SourceConnector;
