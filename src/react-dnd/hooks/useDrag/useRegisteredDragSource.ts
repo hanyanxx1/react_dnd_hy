@@ -12,8 +12,8 @@ function useRegisteredDragSource(spec, monitor, connector) {
     const handlerId = registerSource(itemType, dragSource, manager);
     monitor.receiveHandlerId(handlerId);
     connector.receiveHandlerId(handlerId);
-    console.log("dragSources", manager.globalMonitor.registry.dragSources);
-    console.log("types", manager.globalMonitor.registry.types);
+    // console.log("dragSources", manager.globalMonitor.registry.dragSources);
+    // console.log("types", manager.globalMonitor.registry.types);
   });
 }
 
